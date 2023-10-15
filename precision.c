@@ -1,5 +1,4 @@
 #include "main.h"
-#include "util.c"
 /**
  * get_precision - function that Calculate the precision
  * Description: c programm

@@ -4,6 +4,7 @@
 #include "get_size.c"
 #include "width.c"
 #include "h_print.c"
+
 void print_array(char array[], int *array_index);
 
 /** _printf - Printf function

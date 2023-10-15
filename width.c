@@ -1,5 +1,5 @@
 #include "main.h"
-#include "util.c"
+
 /**
  * get_width - Calculates the width for printing
  * Description: c programm
