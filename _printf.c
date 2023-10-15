@@ -1,7 +1,12 @@
 #include "main.h"
+#include "flags.c"
+#include "precision.c"
+#include "get_size.c"
+#include "width.c"
+#include "h_print.c"
 void print_array(char array[], int *array_index);
-/**
- * _printf - Printf function
+
+/** _printf - Printf function
  * Description: c programm
  * @format: the format.
  * Return: the Printed chars.
@@ -9,29 +14,29 @@ void print_array(char array[], int *array_index);
 int _printf(const char *format, ...)
 {
 int n, pr = 0, printed_ch = 0;
-int flags, width, precision, size, array_indrx = 0;
+int flags, width, precision, size, array_index = 0;
 va_list arg;
-char array[array_SIZE];
+char array[ARR_SIZE];
 va_start(arg, format);
 if (format == NULL)
 {
 return (-1);
 }
-while (format[i] && format != '\0')
+for (n = 0; (format[n] && format) != '\0'; n++)
 {
-if (format[i] != '%')
+if (format[n] != '%')
 {
-array[array_index++] = format[i];
-if (array_index == array_SIZE)
+array[array_index++] = format[n];
+if (array_index == ARR_SIZE)
 print_array(array, &array_index);
 printed_ch++;
 }
 else
 {
 print_array(array, &array_index);
-flags = flags(format, &n);
-width = width(format, &n, arg);
-precision = precision(format, &n, arg);
+flags = get_flags(format, &n);
+width = get_width(format, &n, arg);
+precision = get_precision(format, &n, arg);
 size = get_size(format, &n);
 ++n;
 pr = h_print(format, &n, arg, array, flags, width, precision, size);
@@ -41,7 +46,6 @@ return (-1);
 }
 printed_ch += pr;
 }
-i++;
 }
 print_array(array, &array_index);
 va_end(arg);

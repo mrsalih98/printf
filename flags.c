@@ -1,12 +1,12 @@
 #include "main.h"
 /**
- * flags - function that Calculates flags
+ * get_flags - function that Calculates flags
  * Description: c programm
  * @format: Formatted string
  * @ar: take a parameter.
  * Return: Flags
  */
-int flags(const char *format, int *ar)
+int get_flags(const char *format, int *ar)
 {
 int p;
 int current_ar;

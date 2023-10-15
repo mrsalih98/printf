@@ -1,4 +1,7 @@
 #include "main.h"
+#include "writ_handler.c"
+int handle_write_char(char c, char array[],
+int flags, int width, int precision, int size);
 /**
  * print_character - Prints a character
  * @arg: the arguments

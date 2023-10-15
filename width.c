@@ -1,24 +1,25 @@
 #include "main.h"
+#include "util.c"
 /**
- * width - Calculates the width for printing
+ * get_width - Calculates the width for printing
  * Description: c programm
  * @format: Formatted string
  * @ar: List of arguments to be printed.
  * @arg: list of arguments
  * Return: width.
  */
-int width(const char *format, int *ar, va_list arg)
+int get_width(const char *format, int *ar, va_list arg)
 {
-int currrent_ar = *ar + 1;
+int current_ar = *ar + 1;
 int width = 0;
-while (format[currrent_ar] != '\0')
+while (format[current_ar] != '\0')
 {
-if (is_digit(format[currrent_ar]))
+if (is_digit(format[current_ar]))
 {
 width = width * 10;
-width = width + format[currrent_ar] - '0';
+width = width + format[current_ar] - '0';
 }
-else if (format[currrent_ar] == '*')
+else if (format[current_ar] == '*')
 {
 current_ar++;
 width = va_arg(arg, int);
@@ -30,6 +31,6 @@ break;
 }
 current_ar++;
 }
-*ar = currrent_ar - 1;
+*ar = current_ar - 1;
 return (width);
 }

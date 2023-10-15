@@ -1,4 +1,5 @@
 #include "main.h"
+#include "func1.c"
 /**
  * h_print - Prints an argument based on its type
  * Description: c programm
@@ -16,14 +17,14 @@ int h_print(const char *fmst, int *in, va_list arg,
 char array[], int flags, int width, int precision, int size)
 {
 int j, unkn_length = 0, printed_ch = -1; fmst_t fmst_arg[] = {
-{'c', print_char}, {'s', print_string}, {'%', percent},
+{'c', print_character}, {'s', print_string}, {'%', print_percent},
 {'\0', NULL}
 };
-for (j = 0; fmst_arg[j].f != '\0'; i++)
+for (j = 0; fmst_arg[j].fmst != '\0'; j++)
 {
-if (fmst[*in] == fmst_arg[i].fmt)
+if (fmst[*in] == fmst_arg[j].fmst)
 return (fmst_arg[j].fm(arg, array, flags, width, precision, size));
-if (fmst_arg[j].f == '\0')
+if (fmst_arg[j].fmst == '\0')
 {
 if (fmst[*in] == '\0')
 {

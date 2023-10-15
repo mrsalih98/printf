@@ -25,19 +25,19 @@ array[j++] = c;
 array[j] = '\0';
 if (width > 1)
 {
-array[ARRAY_SIZE - 1] = '\0';
-for (j = 0;  < width - 1; j++)
+array[ARR_SIZE - 1] = '\0';
+for (j = 0; j < width - 1; j++)
 {
-array[ARRAY_SIZE - j - 2] = pad;
+array[ARR_SIZE - j - 2] = pad;
 }
 if (flags & FLAGS_MINUS)
 {
 return (write(1, &array[0], 1) +
-write(1, &array[ARRAY_SIZE - j - 1], width - 1));
+write(1, &array[ARR_SIZE - j - 1], width - 1));
 }
 else
 {
-return (write(1, &array[ARRAY_SIZE - j - 1], width - 1) +
+return (write(1, &array[ARR_SIZE - j - 1], width - 1) +
 write(1, &array[0], 1));
 }
 }

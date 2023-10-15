@@ -8,7 +8,7 @@
  */
 int get_size(const char *format, int *ar)
 {
-int current_ar = *i + 1;
+int current_ar = *ar + 1;
 int size = 0;
 if (format[current_ar] == 'l')
 {
