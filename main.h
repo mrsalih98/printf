@@ -39,5 +39,7 @@ int print_string(va_list arg, char array[],
 int flags, int width, int precision, int size);
 int print_percent(va_list arg, char array[],
 int flags, int width, int precision, int size);
-nt is_digit(char);
+int is_digit(char);
+int handle_write_char(char c, char array[], int flags, int width, int precision, int size);
+#define UNUSED(x) (void)(x)
 #endif

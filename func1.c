@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print-character - Prints a character
+ * print_character - Prints a character
  * @arg: the arguments
  * @array: an array to handle print
  * @flags:  Calculates  flags
@@ -9,14 +9,14 @@
  * @size: Size specifier
  * Return: Number of chars that printed
  */
-int print-character(va_list arg, char array[],
+int print_character(va_list arg, char array[],
 int flags, int width, int precision, int size)
 {
 char c = va_arg(arg, int);
 return (handle_write_char(c, array, flags, width, precision, size));
 }
 /**
- * print-string - function that Prints a string
+ * print_string - function that Prints a string
  * @arg: List a of arguments
  * @array: array to handle print
  * @flags:  Calculates flags
@@ -25,7 +25,7 @@ return (handle_write_char(c, array, flags, width, precision, size));
  * @size: Size specifier
  * Return: Number of characters printed
  */
-int print-string(va_list arg, char array[],
+int print_string(va_list arg, char array[],
 int flags, int width, int precision, int size)
 {
 int length = 0, j;
@@ -37,7 +37,7 @@ UNUSED(precision);
 UNUSED(size);
 if (string == NULL)
 {
-str = "(null)";
+string = "(null)";
 if (precision >= 6)
 string = "      ";
 }
@@ -73,7 +73,7 @@ return (width);
 return (write(1, string, length));
 }
 /**
- * print-percent - function that Prints a percent sign
+ * print_percent - function that Prints a percent sign
  * @arg: Lista of arguments
  * @array: Buffer array to handle print
  * @flags:  Calculates active flags
@@ -82,7 +82,7 @@ return (write(1, string, length));
  * @size: Size specifier
  * Return: Number of characters printed
  */
-int print-percent(va_list arg, char array[],
+int print_percent(va_list arg, char array[],
 int flags, int width, int precision, int size)
 {
 UNUSED(arg);
