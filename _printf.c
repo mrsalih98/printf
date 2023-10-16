@@ -1,8 +1,7 @@
 #include "main.h"
-
 void print_array(char array[], int *array_index);
-
-/** _printf - Printf function
+/**
+ * _printf - Printf function
  * Description: c programm
  * @format: the format.
  * Return: the Printed chars.
