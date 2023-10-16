@@ -1,7 +1,4 @@
 #include "main.h"
-
-
-
 /**
  * print_character - Prints a character
  * @arg: the arguments
@@ -30,51 +27,31 @@ return (handle_write_char(c, array, flags, width, precision, size));
  */
 int print_string(va_list arg, char array[],
 int flags, int width, int precision, int size)
-{
-int length = 0, j;
+{ int length = 0, j;
 char *string = va_arg(arg, char *);
-UNUSED(array);
-UNUSED(flags);
-UNUSED(width);
-UNUSED(precision);
-UNUSED(size);
+UNUSED(array), UNUSED(flags), UNUSED(width), UNUSED(precision), UNUSED(size);
 if (string == NULL)
-{
-string = "(null)";
+{ string = "(null)";
 if (precision >= 6)
-string = "      ";
-}
+string = "      "; }
 while (string[length] != '\0')
-{
-length++;
-}
+{ length++; }
 if (precision >= 0 && precision < length)
-{
-length = precision;
-}
+{ length = precision; }
 if (width > length)
 {
 if (flags & FLAGS_MINUS)
-{
-write(1, &string[0], length);
+{ write(1, &string[0], length);
 for (j = width - length; j > 0; j--)
-{
-write(1, " ", 1);
-}
-return (width);
-}
+{ write(1, " ", 1); }
+return (width); }
 else
 {
 for (j = width - length; j > 0; j--)
-{
-write(1, " ", 1);
-}
+{ write(1, " ", 1); }
 write(1, &string[0], length);
-return (width);
-}
-}
-return (write(1, string, length));
-}
+return (width); }}
+return (write(1, string, length)); }
 /**
  * print_percent - function that Prints a percent sign
  * @arg: Lista of arguments
@@ -87,12 +64,6 @@ return (write(1, string, length));
  */
 int print_percent(va_list arg, char array[],
 int flags, int width, int precision, int size)
-{
-UNUSED(arg);
-UNUSED(array);
-UNUSED(flags);
-UNUSED(width);
-UNUSED(precision);
+{ UNUSED(arg), UNUSED(array), UNUSED(flags), UNUSED(width), UNUSED(precision);
 UNUSED(size);
-return (write(1, "%%", 1));
-}
+return (write(1, "%%", 1)); }
