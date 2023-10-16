@@ -20,7 +20,7 @@ for (p = 0; FLAGS_CHARACTER[p] != '\0'; p++)
 {
 if (format[current_ar] == FLAGS_CHARACTER[p])
 {
-flags |=  FLAGS_ARRAY[p];
+flags |= FLAGS_ARRAY[p];
 break;
 }
 }
