@@ -1,9 +1,4 @@
 #include "main.h"
-#include "flags.c"
-#include "precision.c"
-#include "get_size.c"
-#include "width.c"
-#include "h_print.c"
 
 void print_array(char array[], int *array_index);
 
