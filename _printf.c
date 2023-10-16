@@ -39,7 +39,7 @@ if (pr == -1)
 {
 return (-1);
 }
-printed_ch = printed_ch + pr;
+printed_ch += pr;
 }
 }
 print_array(array, &array_index);
