@@ -38,7 +38,7 @@ int print_string(va_list arg, char array[],
 int flags, int width, int precision, int size);
 int print_percent(va_list arg, char array[],
 int flags, int width, int precision, int size);
-int is_digit(char);
+int is_digit(char c);
 int handle_write_char(char c, char array[], int flags, int width, int precision, int size);
 int get_flags(const char *format, int *ar);
 int get_width(const char *format, int *ar, va_list arg);
