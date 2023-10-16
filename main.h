@@ -1,9 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
-#include <stdlib.h>
+#include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
-#include <stdio.h>
 #define ARR_SIZE 1024
 #define FLAGS_MINUS 1
 #define FLAGS_PLUS 2
