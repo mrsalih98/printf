@@ -12,18 +12,18 @@ int n, pr = 0, printed_ch = 0;
 int flags, width, precision, size, array_index = 0;
 va_list arg;
 char array[ARR_SIZE];
-va_start(arg, format);
 if (format == NULL)
 {
 return (-1);
 }
+va_start(arg, format);
 for (n = 0; (format[n] && format) != '\0'; n++)
 {
 if (format[n] != '%')
 {
 array[array_index++] = format[n];
 if (array_index == ARR_SIZE)
-print_array(array, &array_index);
+{ print_array(array, &array_index); }
 printed_ch++;
 }
 else
@@ -39,7 +39,7 @@ if (pr == -1)
 {
 return (-1);
 }
-printed_ch += pr;
+printed_ch = printed_ch + pr;
 }
 }
 print_array(array, &array_index);
