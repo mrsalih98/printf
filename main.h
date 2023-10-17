@@ -44,8 +44,8 @@ int get_flags(const char *format, int *ar);
 int get_width(const char *format, int *ar, va_list arg);
 int get_precision(const char *format, int *ar, va_list arg);
 int get_size(const char *format, int *ar);
-int print_int ( va_list args ) ;
-int print_deci (va_list args ) ;
+int print_int(va_list args ) ;
+int print_deci(va_list args ) ;
 
 
 
