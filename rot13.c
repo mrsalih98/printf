@@ -15,15 +15,15 @@ int flags, int width, int precision, int size)
 char *string;
 unsigned int p, k;
 int counter = 0;
-char input[] = 
+char input[] =
 "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-char output[] = 
+char output[] =
 "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 string = va_arg(arg, char *);
 UNUSED(array),	UNUSED(flags), UNUSED(width);
 UNUSED(precision), UNUSED(size);
 if (string == NULL)
-{ string = "(AHYY)";}
+{ string = "(AHYY)"; }
 for (p = 0; string[p]; p++)
 {
 for (k = 0; input[k]; k++)
