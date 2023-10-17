@@ -58,7 +58,8 @@ int print_binary(va_list arg, char array[],
 int flags, int width, int precision, int size);
 int print_int ( va_list args ) ;
 int print_deci (va_list args ) ;
-
+int print_reverse(va_list arg, char array[],
+int flags, int width, int precision, int size);
 
 
 

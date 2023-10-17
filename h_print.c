@@ -19,7 +19,8 @@ char array[], int flags, int width, int precision, int size)
 int j, unkn_length = 0, printed_ch = -1;
 fmst_t fmst_arg[] = {
 {'c', print_character}, {'s', print_string}, {'%', print_percent},
-{'\0', NULL}
+{'b', print_binary}, {'S', pr_non_printable}, {'r', print_reverse},
+{'R', print_rot13_string}, {'\0', NULL}
 };
 for (j = 0; fmst_arg[j].fmst != '\0'; j++)
 {
