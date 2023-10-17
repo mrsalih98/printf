@@ -15,8 +15,7 @@ int handle_write_char(char c, char array[],
 {
 int j = 0;
 char pad = ' ';
-UNUSED(precision);
-UNUSED(size);
+UNUSED(precision), UNUSED(size);
 if (flags & FLAGS_ZERO)
 {
 pad = '0';

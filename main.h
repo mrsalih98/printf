@@ -62,6 +62,5 @@ int print_reverse(va_list arg, char array[],
 int flags, int width, int precision, int size);
 
 
-
 #define UNUSED(x) (void)(x)
 #endif
