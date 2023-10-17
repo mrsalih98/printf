@@ -4,13 +4,18 @@
 #include <stdarg.h>
 #include <unistd.h>
 #define ARR_SIZE 1024
+/* Flags */ 
 #define FLAGS_MINUS 1
 #define FLAGS_PLUS 2
 #define FLAGS_ZERO 4
 #define FLAGS_HASH 8
 #define FLAGS_SPACE 16
+/* Sizes */ 
 #define S_LONG 2
 #define S_SHORT 1
+#define UNUSED(x) (void)(x)
+#define BUFF_SIZE 1024
+
 /**
  * struct fmst - Struct 
  * Description: c programm
