@@ -11,7 +11,8 @@
  */
 int print_binary(va_list arg, char array[],
 int flags, int width, int precision, int size)
-{ unsigned int p, k, j, summ, d[32];
+{ unsigned int p, k, j, summ;
+unsigned int d[32];
 int counter;
 UNUSED(array), UNUSED(flags), UNUSED(width), UNUSED(precision);
 UNUSED(size);
@@ -23,7 +24,7 @@ for (j = 1; j < 32; j++)
 d[j] = (p / k) % 2;
 }
 for (j = 0, summ = 0, counter = 0; j < 32; j++)
-{ summ = summ + d[j];
+{ summ += d[j];
 if (summ || j == 31)
 {
 char m = '0' + d[j];
