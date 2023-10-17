@@ -44,6 +44,8 @@ int get_flags(const char *format, int *ar);
 int get_width(const char *format, int *ar, va_list arg);
 int get_precision(const char *format, int *ar, va_list arg);
 int get_size(const char *format, int *ar);
+int print_binary(va_list arg, char array[],
+int flags, int width, int precision, int size);
 
 
 
