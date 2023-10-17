@@ -1,4 +1,5 @@
 #include "main.h"
+
 void print_array(char array[], int *array_index);
 /**
  * _printf - Printf function
