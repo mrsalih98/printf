@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * pr_non_printable - Prints ascii codes in hexa of
+ * pr_non_printable - function that Prints ascii codes in hexa of
  * non printable characters
- * @types: Lista of arguments
+ * @arg: Lista of arguments
  * @array: array to handle print
  * @flags:  Calculates flags
  * @width: get width
