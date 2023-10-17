@@ -1,62 +1,67 @@
 #include "main.h"
 
-void print_array(char array[], int *array_index);
+void print_buffer(char buffer[], int *buff_ind);
+
 /**
  * _printf - Printf function
- * Description: c programm
- * @format: the format.
- * Return: the Printed chars.
+ * @format: format.
+ * Return: Printed chars.
  */
 int _printf(const char *format, ...)
 {
-int n, pr = 0, printed_ch = 0;
-int flags, width, precision, size, array_index = 0;
-va_list arg;
-char array[ARR_SIZE];
-if (format == NULL)
-{
-return (-1);
+	int i, printed = 0, printed_chars = 0;
+	int flags, width, precision, size, buff_ind = 0;
+	va_list list;
+	char buffer[BUFF_SIZE];
+
+	if (format == NULL)
+		return (-1);
+
+	va_start(list, format);
+
+	for (i = 0; format && format[i] != '\0'; i++)
+	{
+		if (format[i] != '%')
+		{
+			buffer[buff_ind++] = format[i];
+			if (buff_ind == BUFF_SIZE)
+				print_buffer(buffer, &buff_ind);
+			/* write(1, &format[i], 1);*/
+			printed_chars++;
+		}
+		else
+		{
+			print_buffer(buffer, &buff_ind);
+			flags = get_flags(format, &i);
+			width = get_width(format, &i, list);
+			precision = get_precision(format, &i, list);
+			size = get_size(format, &i);
+			++i;
+			printed = handle_print(format, &i, list, buffer,
+				flags, width, precision, size);
+			if (printed == -1)
+				return (-1);
+			printed_chars += printed;
+		}
+	}
+
+	print_buffer(buffer, &buff_ind);
+
+	va_end(list);
+
+	return (printed_chars);
 }
-va_start(arg, format);
-for (n = 0; (format[n] && format) != '\0'; n++)
-{
-if (format[n] != '%')
-{
-array[array_index++] = format[n];
-if (array_index == ARR_SIZE)
-{ print_array(array, &array_index); }
-printed_ch++;
-}
-else
-{
-print_array(array, &array_index);
-flags = get_flags(format, &n);
-width = get_width(format, &n, arg);
-precision = get_precision(format, &n, arg);
-size = get_size(format, &n);
-++n;
-pr = h_print(format, &n, arg, array, flags, width, precision, size);
-if (pr == -1)
-{
-return (-1);
-}
-printed_ch += pr;
-}
-}
-print_array(array, &array_index);
-va_end(arg);
-return (printed_ch);
-}
+
 /**
- * print_array - Prints the contents of array
- * @array: Array of chars
- * @array_index: Index at which to add next char
+ * print_buffer - Prints the contents of the buffer if it exist
+ * @buffer: Array of chars
+ * @buff_ind: Index at which to add next char, represents the length.
  */
-void print_array(char array[], int *array_index)
+void print_buffer(char buffer[], int *buff_ind)
 {
-if (*array_index > 0)
-{
-write(1, &array[0], *array_index);
+	if (*buff_ind > 0)
+		write(1, &buffer[0], *buff_ind);
+
+	*buff_ind = 0;
 }
-*array_index = 0;
-}
+
