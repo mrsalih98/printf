@@ -44,8 +44,14 @@ int get_flags(const char *format, int *ar);
 int get_width(const char *format, int *ar, va_list arg);
 int get_precision(const char *format, int *ar, va_list arg);
 int get_size(const char *format, int *ar);
+<<<<<<< HEAD
 int print_binary(va_list arg, char array[],
 int flags, int width, int precision, int size);
+=======
+int print_int ( va_list args ) ;
+int print_deci (va_list args ) ;
+
+>>>>>>> f1145379ac132c64a8f3c612508f067da8b3115e
 
 
 
