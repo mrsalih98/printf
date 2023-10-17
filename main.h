@@ -51,6 +51,8 @@ int pr_non_printable(va_list arg, char array[],
 int flags, int width, int precision, int size);
 int is_printable(char m);
 int append_hexadecimal_code(char asc_code, char array[], int p);
+int print_rot13_string(va_list arg, char array[],
+int flags, int width, int precision, int size);
 
 int print_binary(va_list arg, char array[],
 int flags, int width, int precision, int size);
