@@ -20,7 +20,8 @@ int j, unkn_length = 0, printed_ch = -1;
 fmst_t fmst_arg[] = {
 {'c', print_character}, {'s', print_string}, {'%', print_percent},
 {'b', print_binary}, {'S', pr_non_printable}, {'r', print_reverse},
-{'R', print_rot13_string}, {'\0', NULL}
+{'u', pri_unsigned}, {'o', pri_octal}, {'x', pri_hexadecimal},
+{'X', pri_hexa_upper}, {'R', print_rot13_string}, {'\0', NULL}
 };
 for (j = 0; fmst_arg[j].fmst != '\0'; j++)
 {

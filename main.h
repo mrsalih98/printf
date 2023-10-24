@@ -61,6 +61,25 @@ int print_deci (va_list args ) ;
 int print_reverse(va_list arg, char array[],
 int flags, int width, int precision, int size);
 
+long int conv_size_unsgnd(unsigned long int numb, int size);
+
+int write_unsignd(int is_negative, int index,
+char array[], int flags, int width, int precision, int size);
+
+int pri_hexa(va_list arg, char mapp_to[], char array[],
+int flags, char flag_chara, int width, int precision, int size);
+
+int pri_hexa_upper(va_list arg, char array[],
+int flags, int width, int precision, int size);
+
+int pri_hexadecimal(va_list arg, char array[],
+int flags, int width, int precision, int size);
+
+int pri_octal(va_list arg, char array[],
+int flags, int width, int precision, int size);
+
+int pri_unsigned(va_list arg, char array[],
+int flags, int width, int precision, int size);
 
 #define UNUSED(x) (void)(x)
 #endif
