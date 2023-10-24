@@ -51,7 +51,7 @@ if (flags & FLAGS_HASH && init_numb != 0)
 { array[j--] = '0'; }
 j++;
 return (write_unsignd(0, j, array, flags, width, precision, size));
-k}
+}
 
 /**
  * pri_hexadecimal - function that Prints unsigned

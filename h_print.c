@@ -1,5 +1,6 @@
 #include "main.h"
-
+#include "func1.c"
+#include "func3.c"
 /**
  * h_print - Prints an argument based on its type
  * Description: c programm
