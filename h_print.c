@@ -14,8 +14,8 @@
  * Return: printed character
  */
 int h_print(const char *fmst, int *in, va_list arg,
- char array[], int flags, int width, int precision, int size)
-{ 
+char array[], int flags, int width, int precision, int size)
+{
 int j, unkn_length = 0, printed_ch = -1;
 fmst_t fmst_arg[] = {
 {'c', print_character}, {'s', print_string}, {'%', print_percent},

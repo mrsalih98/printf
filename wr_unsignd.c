@@ -18,7 +18,7 @@ char pad = ' ';
 UNUSED(is_negative);
 UNUSED(size);
 if (precision == 0 && index == ARR_SIZE - 2 && array[index] == '0')
-{ return (0); } 
+{ return (0); }
 if (precision > 0 && precision < len)
 { pad = ' '; }
 while (precision > len)
@@ -31,10 +31,10 @@ if (width > len)
 for (j = 0; j < width - len; j++)
 { array[j] = pad; }
 array[j] = '\0';
-if (flags & FLAGS_MINUS) 
+if (flags & FLAGS_MINUS)
 {
 return (write(1, &array[index], len) + write(1, &array[0], j)); }
-else 
+else
 {
 return (write(1, &array[0], j) + write(1, &array[index], len)); }
 }

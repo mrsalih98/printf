@@ -51,10 +51,11 @@ if (flags & FLAGS_HASH && init_numb != 0)
 { array[j--] = '0'; }
 j++;
 return (write_unsignd(0, j, array, flags, width, precision, size));
-}
+k}
 
 /**
- * pri_hexadecimal - function that Prints unsigned number in hexadecimal notation
+ * pri_hexadecimal - function that Prints unsigned
+ * number in hexadecimal notation
  * @arg: Lista of arguments
  * @array: array to handle print
  * @flags:  Calculates flags
@@ -66,13 +67,14 @@ return (write_unsignd(0, j, array, flags, width, precision, size));
 int pri_hexadecimal(va_list arg, char array[],
 int flags, int width, int precision, int size)
 {
-return (pri_hexa(arg, "0123456789abcdef", array, 
+return (pri_hexa(arg, "0123456789abcdef", array,
 flags, 'x', width, precision, size));
 }
 
 
 /**
- * pri_hexa_upper - function that Prints unsigned number in upper hexadecimal notation
+ * pri_hexa_upper - function that Prints unsigned
+ * number in upper hexadecimal notation
  * @arg: Lista of arguments
  * @array: array to handle print
  * @flags:  Calculates flags
